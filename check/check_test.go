@@ -18,7 +18,7 @@ func TestMultiply(t *testing.T) {
 	}
 	for _, v := range c {
 		t.Run(fmt.Sprintf("%v*%v", v.arg1, v.arg2), func(t *testing.T) {
-			got := multiply(v.arg1, v.arg2)
+			got := Multiply(v.arg1, v.arg2)
 			if got != v.want {
 				t.Errorf("Expected %v but got %v", v.want, got)
 			}
