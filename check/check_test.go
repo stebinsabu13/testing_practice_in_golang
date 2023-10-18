@@ -25,3 +25,20 @@ func TestMultiply(t *testing.T) {
 		})
 	}
 }
+
+func TestAdd(t *testing.T) {
+	c := []condition{
+		{4, 6, 10},
+		{1, 2, 3},
+		{5, 4, 9},
+		{10, 11, 21},
+	}
+	for _, v := range c {
+		t.Run(fmt.Sprintf("%v+%v", v.arg1, v.arg2), func(t *testing.T) {
+			got := Add(v.arg1, v.arg2)
+			if got != v.want {
+				t.Errorf("Expected %v but got %v", v.want, got)
+			}
+		})
+	}
+}
